@@ -18,7 +18,7 @@ var logFormat = "'[:date[iso]] - :remote-addr - :method :url :status :response-t
 app.use(morgan(logFormat))
 
 function getCurrentState(){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
   playerState = itunes.playerState();
   currentState = {};
 
@@ -63,7 +63,7 @@ function sendResponse(error, res){
 }
 
 function playPlaylist(nameOrId){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
 
   if ((nameOrId - 0) == nameOrId && ('' + nameOrId).trim().length > 0) {
     id = parseInt(nameOrId);
@@ -76,7 +76,7 @@ function playPlaylist(nameOrId){
 }
 
 function setVolume(level){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
 
   if (level) {
     itunes.soundVolume = parseInt(level);
@@ -87,7 +87,7 @@ function setVolume(level){
 }
 
 function setMuted(muted){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
 
   if (muted) {
     itunes.mute = muted;
@@ -98,7 +98,7 @@ function setMuted(muted){
 }
 
 function setShuffle(mode){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
 
   if (!mode) {
     mode = "songs"
@@ -115,7 +115,7 @@ function setShuffle(mode){
 }
 
 function setRepeat(mode){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
 
   if (!mode) {
     mode = "all"
@@ -131,7 +131,7 @@ function setRepeat(mode){
 }
 
 function getPlaylistsFromItunes(){
-  itunes = Application('iTunes');
+  itunes = Application('Music');
   playlists = itunes.playlists();
 
   playlistNames = [];

@@ -10,7 +10,7 @@
       <key>PATH</key>
       <string>/usr/local/bin/:/usr/bin:$PATH</string>
       <key>NODE_ENV</key>
-      <string>production</string>
+      <string>development</string>
     </dict>
 
     <key>Program</key>
